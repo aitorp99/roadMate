@@ -1,0 +1,21 @@
+
+<div class="login">
+    <div class="form-ubication">
+    <div *ngIf="errorMessage" class="error-message">ERROR - DATOS INCORRECTOS</div>
+    <h1>Inicie sesión</h1>
+        <form>
+            <div class="form-group">
+                <label class="txt" for="email">Email</label>
+                <input type="email" class="form-control" placeholder="ejemplo@roadmate.com" [(ngModel)]="email" name="email">
+            </div>
+            <div class="form-group">
+                <label class="txt">Password</label>
+                <input type="password" class="form-control" placeholder="Password" [(ngModel)]="password" name="password">
+            </div>
+            <input (click)="LoginButton()" type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Iniciar Sesión"> 
+        </form>
+        <a href="/Registrarse" class="registro">¿No te has registrado? Registrate</a>
+    </div>
+</div>
+
+
