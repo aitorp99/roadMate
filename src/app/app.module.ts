@@ -9,6 +9,7 @@ import { ButtomNavigationComponent } from './components/buttom-navigation/buttom
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrerComponent } from './components/registrer/registrer.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { RegistrerComponent } from './components/registrer/registrer.component';
     ButtomNavigationComponent,
     HomeComponent,
     LoginComponent,
-    RegistrerComponent
+    RegistrerComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
