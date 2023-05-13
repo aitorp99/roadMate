@@ -1,0 +1,18 @@
+<div class="container">
+    <h1 class="chat-title">{{ selectedChat?.name }}</h1>
+  
+    <div class="messages">
+      <div class="message" [ngClass]="{'message-right': message.sender === 'Tú', 'message-left': message.sender !== 'Tú'}" *ngFor="let message of selectedChat?.messages">
+        <div class="sender">{{ message.sender }}</div>
+        <div class="content">{{ message.content }}</div>
+      </div>
+    </div>
+  
+    <div class="send-message">
+      <input [(ngModel)]="newMessage" placeholder="Type your message here" />
+      <button (click)="sendMessage()">
+        <i class="fa-solid fa-paper-plane-top"></i>
+      </button>
+    </div>
+  </div>
+  

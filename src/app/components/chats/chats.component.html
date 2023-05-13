@@ -1,0 +1,23 @@
+<div class="main-container">
+    <h1 class="title">RoadMate</h1>
+    <div class="container">
+        <div class="row" *ngFor="let chat of chatsService.chats" (click)="selectChat(chat)">
+        <div class="col-12">
+            <div class="card">
+            <div class="row g-0">
+                <div class="col-md-4 d-flex align-items-center justify-content-start">
+                    <img [src]="chat.profilePic || './assets/user.png'" class="img-fluid rounded-start profile-pic" alt="Imagen de perfil">
+                </div>
+                <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{ chat.name }}</h5>
+                    <p class="card-text">{{ chat.messages[chat.messages.length - 1]?.content || 'No hay mensajes aún' }}</p>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+  </div>
+  
