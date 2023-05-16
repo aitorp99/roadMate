@@ -8,8 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class RegistrerComponent implements OnInit {
 
   constructor() { }
-
+  email: any;
+  password: any;
+  error:string = "ERROR - DATOS INCORRECTOS"
+  errorMessage:boolean = false;
+  name: any;
   ngOnInit(): void {
   }
+
+  RegisterButton() {
+    
+  }
+
 
 }
