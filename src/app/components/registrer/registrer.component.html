@@ -4,18 +4,42 @@
     <div *ngIf="errorMessage" class="error-message">ERROR - DATOS INCORRECTOS</div>
     <h1>Registrarse</h1>
         <form>
+            <!-- User Name -->
+            <div class="form-group">
+                <label class="txt">User Name</label>
+                <input type="text" class="form-control" placeholder="User Name" [(ngModel)]="userName " name="User Name ">
+            </div>
+
+            <!-- Name -->
             <div class="form-group">
                 <label class="txt" for="name">Name</label>
                 <input type="text" class="form-control" placeholder="Tu Nombre" [(ngModel)]="name"name="name">
             </div>
+
+            <!-- Last Name -->
+            <div class="form-group">
+                <label class="txt" for="name">Last Name</label>
+                <input type="text" class="form-control" placeholder="Last Name" [(ngModel)]="lastName"name="Last Name">
+            </div>
+
+            <!-- Email -->
             <div class="form-group">
                 <label class="txt" for="email">Email</label>
                 <input type="email" class="form-control" placeholder="ejemplo@roadmate.com" [(ngModel)]="email" name="email">
             </div>
+
+            <!-- Password -->
             <div class="form-group">
                 <label class="txt">Password</label>
                 <input type="password" class="form-control" placeholder="Password" [(ngModel)]="password" name="password">
             </div>
+
+            <!-- telefono -->
+            <div class="form-group">
+                <label class="txt">Telefono</label>
+                <input type="text" class="form-control" placeholder="Telefono" [(ngModel)]="telefono" name="telefono">
+            </div>
+
             <input (click)="RegisterButton()" type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Iniciar Sesión"> 
         </form>
         <a href="/Registrarse" class="registro">¿No te has registrado? Registrate</a>

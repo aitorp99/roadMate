@@ -13,6 +13,9 @@ export class RegistrerComponent implements OnInit {
   error:string = "ERROR - DATOS INCORRECTOS"
   errorMessage:boolean = false;
   name: any;
+  userName: any;
+  lastName: any;
+  telefono: any;
   ngOnInit(): void {
   }
 
