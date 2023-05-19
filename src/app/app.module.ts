@@ -12,6 +12,8 @@ import { RegistrerComponent } from './components/registrer/registrer.component';
 import { SearchComponent } from './components/search/search.component';
 import { ChatsComponent } from './components/chats/chats.component';
 import { SpecificChatComponent } from './components/specific-chat/specific-chat.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,12 +24,14 @@ import { SpecificChatComponent } from './components/specific-chat/specific-chat.
     RegistrerComponent,
     SearchComponent,
     ChatsComponent,
-    SpecificChatComponent
+    SpecificChatComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

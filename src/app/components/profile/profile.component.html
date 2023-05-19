@@ -1,0 +1,26 @@
+<div class="perfil">
+    <img [src]="user.imageUrl" alt="Foto de perfil">
+    <div *ngIf="!editing" class="informacion">
+      <p>Nombre: {{ user.name }} <button class="btn" (click)="toggleEdit()"><i class="fa-solid fa-pencil"></i></button></p>
+      <p>Email: {{ user.email }} <button class="btn" (click)="toggleEdit()"><i class="fa-solid fa-pencil"></i></button></p>
+      <p>Teléfono: {{ user.phone }} <button class="btn" (click)="toggleEdit()"><i class="fa-solid fa-pencil"></i></button></p>
+    </div>
+    <form *ngIf="editing" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+      <label>
+        Nombre:
+        <input type="text" formControlName="name">
+      </label>
+      <label>
+        Email:
+        <input type="email" formControlName="email">
+      </label>
+      <label>
+        Teléfono:
+        <input type="tel" formControlName="phone">
+      </label>
+      <button type="submit" class="btn btn-success" (click)="saveChanges">Guardar cambios</button>
+      <button type="button" class="btn btn-danger" (click)="toggleEdit()">Cancelar</button>
+    </form>
+    <button class="btn btn-primary" (click)="logout()">Cerrar sesión</button>
+  </div>
+  

@@ -6,6 +6,7 @@ import { SearchComponent } from './components/search/search.component';
 import { ChatsComponent } from './components/chats/chats.component';
 import { SpecificChatComponent } from './components/specific-chat/specific-chat.component';
 import { RegistrerComponent } from './components/registrer/registrer.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -13,7 +14,9 @@ const routes: Routes = [
   {path: 'search', component: SearchComponent},
   {path: 'chats', component: ChatsComponent},
   {path: 'specificChat/:id', component: SpecificChatComponent},
-  {path: 'register', component: RegistrerComponent}
+  {path: 'register', component: RegistrerComponent},
+  {path: 'profile', component: ProfileComponent}
+
 ];
 
 @NgModule({
