@@ -23,5 +23,9 @@ export class RegistrerComponent implements OnInit {
     
   }
 
+  AceptRegisterbutton(){
+    
+  }
+
 
 }
