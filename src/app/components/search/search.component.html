@@ -6,12 +6,14 @@
             <div class="card">
             <div class="card-body">
                 <h2 class="card-title">{{ anuncio.name }}</h2>
-                <p class="card-text">Punto de recogida: {{ anuncio.pickup }}</p>
+                <p class="card-text">Punto de recogida: {{ anuncio.pickupAddress }}</p>
+                <p class="card-text">Fin de trayecto: {{ anuncio.dropAddress }}</p>
                 <p class="card-text">Asientos libres: {{ anuncio.freeSeat }}</p>
                 <p class="card-text">Teléfono: {{ anuncio.phone }}</p>
                 <p class="card-text">Horario: {{ anuncio.schedule }}</p>
                 <p class="card-text">Precio: {{ anuncio.price }}€</p>
-                <button class="btn btn-primary" (click)="addAdvertismentBtn()">Apuntarse</button>
+                
+                <button class="btn btn-primary" (click)="addAdvertismentBtn(anuncio)">Apuntarse</button>
             </div>
             </div>
         </div>

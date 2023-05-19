@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +15,7 @@ import { SpecificChatComponent } from './components/specific-chat/specific-chat.
 import { ProfileComponent } from './components/profile/profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CreateAdvertismantComponent } from './components/create-advertismant/create-advertismant.component';
+import { ViewAdvertismentComponent } from './components/view-advertisment/view-advertisment.component';
 
 @NgModule({
   declarations: [
@@ -27,13 +28,15 @@ import { CreateAdvertismantComponent } from './components/create-advertismant/cr
     ChatsComponent,
     SpecificChatComponent,
     ProfileComponent,
-    CreateAdvertismantComponent
+    CreateAdvertismantComponent,
+    ViewAdvertismentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

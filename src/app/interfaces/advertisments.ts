@@ -1,8 +1,10 @@
 export interface Advertisments {
-    name:string;
-    pickup:string;
-    freeSeat:number;
-    phone:string;
-    schedule:string;
-    price:number;
-}
+    name: string;
+    freeSeat: number;
+    phone: string;
+    schedule: string;
+    price: number;
+    pickupAddress: string;
+    dropAddress: string;
+  }
+  

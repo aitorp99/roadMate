@@ -1,5 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Advertisments } from 'src/app/interfaces/advertisments';
+import { AdvertismentsService } from 'src/app/services/advertisments.service';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router'; 
+
+
+declare module 'leaflet' {
+  let Routing: any;
+}
 
 @Component({
   selector: 'app-search',
@@ -8,52 +16,62 @@ import { Advertisments } from 'src/app/interfaces/advertisments';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient, private advertismentService: AdvertismentsService, private router: Router) { }
+
+  ngOnInit(): void {
+  }
+
   ads: Advertisments[] = [
     {
       name: 'Anunciante 1',
-      pickup: 'Punto de recogida 1',
       freeSeat: 3,
       phone: '123-456-789',
       schedule: '7:30',
-      price: 2
+      price: 2,
+      pickupAddress: '28932 Móstoles, Madrid',
+      dropAddress: 'C. Tajo, s/n, 28670 Villaviciosa de Odón, Madrid'
     },
     {
       name: 'Anunciante 2',
-      pickup: 'Punto de recogida 2',
       freeSeat: 1,
       phone: '987-654-321',
       schedule: '9:00',
-      price: 2.5
+      price: 2.5,
+      pickupAddress: '28932 Móstoles, Madrid',
+      dropAddress: 'C. Tajo, s/n, 28670 Villaviciosa de Odón, Madrid'
     },
     {
       name: 'Anunciante 3',
-      pickup: 'Punto de recogida 2',
       freeSeat: 2,
       phone: '987-654-321',
       schedule: '12:00',
-      price: 2
+      price: 2,
+      pickupAddress: '28932 Móstoles, Madrid',
+      dropAddress: 'C. Tajo, s/n, 28670 Villaviciosa de Odón, Madrid'
     },
     {
       name: 'Anunciante 4',
-      pickup: 'Punto de recogida 2',
       freeSeat: 2,
       phone: '987-654-321',
       schedule: '14:15',
-      price: 1.5
+      price: 1.5,
+      pickupAddress: '28932 Móstoles, Madrid',
+      dropAddress: 'C. Tajo, s/n, 28670 Villaviciosa de Odón, Madrid'
     },
     {
       name: 'Anunciante 5',
-      pickup: 'Punto de recogida 2',
       freeSeat: 3,
       phone: '987-654-321',
       schedule: '15:45pm',
-      price: 2
+      price: 2,
+      pickupAddress: '28932 Móstoles, Madrid',
+      dropAddress: 'C. Tajo, s/n, 28670 Villaviciosa de Odón, Madrid'
     }
   ];
-  ngOnInit(): void {
-  }
-  addAdvertismentBtn() {
+
+  addAdvertismentBtn(ad: Advertisments) {
+    this.advertismentService.setSelectedAd(ad);
+  this.router.navigate(['/viewAdvertisment']);
 
   }
 }

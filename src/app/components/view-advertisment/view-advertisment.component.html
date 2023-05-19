@@ -1,0 +1,39 @@
+<div class="container mb-6">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-body">
+            <div id="map" style="height: 400px; width: 100%;"></div>
+            <div id="route-instructions" class="route-instructions"></div>
+            <div class="ad-details" *ngIf="ad">
+              <h2>Detalles del anuncio</h2>
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <th scope="row">Precio:</th>
+                      <td>{{ ad.price }}€</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Asientos disponibles:</th>
+                      <td>{{ ad.freeSeat }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Horario:</th>
+                      <td>{{ ad.schedule }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Teléfono:</th>
+                      <td>{{ ad.phone }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <button class="btn btn-primary btn-block" (click)="apuntarse()">Apuntarse al viaje</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

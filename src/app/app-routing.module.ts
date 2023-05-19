@@ -8,6 +8,7 @@ import { SpecificChatComponent } from './components/specific-chat/specific-chat.
 import { RegistrerComponent } from './components/registrer/registrer.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CreateAdvertismantComponent } from './components/create-advertismant/create-advertismant.component'; 
+import { ViewAdvertismentComponent } from './components/view-advertisment/view-advertisment.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -17,7 +18,9 @@ const routes: Routes = [
   {path: 'specificChat/:id', component: SpecificChatComponent},
   {path: 'register', component: RegistrerComponent},
   {path: 'profile', component: ProfileComponent},
-  {path: 'createAdvertismant', component: CreateAdvertismantComponent}
+  {path: 'createAdvertismant', component: CreateAdvertismantComponent},
+  {path: 'viewAdvertisment', component: ViewAdvertismentComponent}
+
 ];
 
 @NgModule({

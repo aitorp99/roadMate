@@ -1,0 +1,43 @@
+.route-instructions {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 600px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin-top: 20px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .route-instructions h2 {
+    margin: 0 0 20px 0;
+    text-align: center;
+    color: #333;
+  }
+  
+  .route-instructions ol {
+    counter-reset: step-counter;
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .route-instructions ol li {
+    counter-increment: step-counter;
+    margin-bottom: 10px;
+    padding-left: 30px;
+  }
+  
+  .route-instructions ol li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    font-size: 20px;
+    background-color: #0095dd;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50%;
+    margin-left: -15px;
+  }
+  
