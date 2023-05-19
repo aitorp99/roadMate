@@ -6,11 +6,8 @@ import { SearchComponent } from './components/search/search.component';
 import { ChatsComponent } from './components/chats/chats.component';
 import { SpecificChatComponent } from './components/specific-chat/specific-chat.component';
 import { RegistrerComponent } from './components/registrer/registrer.component';
-<<<<<<< Updated upstream
 import { ProfileComponent } from './components/profile/profile.component';
-=======
 import { CreateAdvertismantComponent } from './components/create-advertismant/create-advertismant.component'; 
->>>>>>> Stashed changes
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -19,12 +16,8 @@ const routes: Routes = [
   {path: 'chats', component: ChatsComponent},
   {path: 'specificChat/:id', component: SpecificChatComponent},
   {path: 'register', component: RegistrerComponent},
-<<<<<<< Updated upstream
-  {path: 'profile', component: ProfileComponent}
-
-=======
+  {path: 'profile', component: ProfileComponent},
   {path: 'createAdvertismant', component: CreateAdvertismantComponent}
->>>>>>> Stashed changes
 ];
 
 @NgModule({
