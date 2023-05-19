@@ -12,12 +12,9 @@ import { RegistrerComponent } from './components/registrer/registrer.component';
 import { SearchComponent } from './components/search/search.component';
 import { ChatsComponent } from './components/chats/chats.component';
 import { SpecificChatComponent } from './components/specific-chat/specific-chat.component';
-<<<<<<< Updated upstream
 import { ProfileComponent } from './components/profile/profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
-=======
 import { CreateAdvertismantComponent } from './components/create-advertismant/create-advertismant.component';
->>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -29,11 +26,8 @@ import { CreateAdvertismantComponent } from './components/create-advertismant/cr
     SearchComponent,
     ChatsComponent,
     SpecificChatComponent,
-<<<<<<< Updated upstream
-    ProfileComponent
-=======
+    ProfileComponent,
     CreateAdvertismantComponent
->>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,
