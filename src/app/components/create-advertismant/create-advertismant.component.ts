@@ -8,8 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class CreateAdvertismantComponent implements OnInit {
 
   constructor() { }
-
+  origen: any;
+  error:string = "ERROR - DATOS INCORRECTOS"
+  errorMessage:boolean = false;
+  destino: any;
+  horario: any;
+  fecha: any;
   ngOnInit(): void {
+  }
+
+  PublicarAnuncio(){
+    
   }
 
 }

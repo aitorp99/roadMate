@@ -1,1 +1,36 @@
-<p>create-advertismant works!</p>
+<div class="login">
+    <div class="form-ubication">
+    <h1 class="title">RoadMate</h1>
+    <div *ngIf="errorMessage" class="error-message">ERROR - DATOS INCORRECTOS</div>
+    <h1>Publicacion de Anuncio</h1>
+        <form>
+            <!-- Origen -->
+            <div class="form-group">
+                <label class="txt">Origen</label>
+                <input type="text" class="form-control" placeholder="Origen" [(ngModel)]="origen " name="origen">
+            </div>
+
+            <!-- Destino -->
+            <div class="form-group">
+                <label class="txt" for="name">Destino</label>
+                <input type="text" class="form-control" placeholder="Destino" [(ngModel)]="destino" name="destino">
+            </div>
+
+             <!-- fecha -->
+             <div class="form-group">
+                <label class="txt" for="name">Fecha</label>
+                <input type="text" class="form-control" placeholder="dia/mes/ano" [(ngModel)]="fecha" name="fecha">
+            </div>
+
+            <!-- Horario -->
+            <div class="form-group">
+                <label class="txt" for="name">Hora</label>
+                <input type="text" class="form-control" placeholder="00:00:00" [(ngModel)]="horario" name="horario">
+            </div>
+
+
+            <input (click)="PublicarAnuncio()" type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Anuncio"> 
+        </form>
+        <!--<a href="/Registrarse" class="registro"> Ya tengo una cuenta </a>  -->
+    </div>
+</div>
