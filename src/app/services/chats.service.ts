@@ -40,10 +40,30 @@ export class ChatsService {
     },
   ];
 
-getMessages(id: string): Chat | null {
-  return this.chats.find(chat => chat.id === id) || null;
-}
-getChats(): Chat[] {
-  return this.chats;
-}
+  getMessages(id: string): Chat | null {
+    return this.chats.find(chat => chat.id === id) || null;
+  }
+  getChats(): Chat[] {
+    return this.chats;
+  }
+  getChatByUser(name: string): Chat | null {
+    return this.chats.find(chat => chat.name === name) || null;
+  }
+
+  createChat(name: string): Chat {
+    // Generar un nuevo ID para el chat. Esto es solo un ejemplo y puede que quieras generar el ID de otra manera.
+    const newChatId = Math.max(...this.chats.map(chat => Number(chat.id))) + 1;
+
+    const newChat: Chat = {
+      id: newChatId.toString(),
+      name: name,
+      profilePic: "./assets/user.png",  // Deberías reemplazar esto con la imagen de perfil real, si la tienes.
+      messages: [],
+    };
+
+    this.chats.push(newChat);
+
+    return newChat;
+  }
+
 }

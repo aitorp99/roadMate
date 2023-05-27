@@ -6,5 +6,6 @@ export interface Advertisments {
     price: number;
     pickupAddress: string;
     dropAddress: string;
+    role: 'driver' | 'passenger';
   }
   

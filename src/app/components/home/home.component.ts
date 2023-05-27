@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Advertisments } from 'src/app/interfaces/advertisments';
+import { AdvertismentsService } from 'src/app/services/advertisments.service';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router'; 
+import { ChatsService } from 'src/app/services/chats.service';
 
-type Anuncio = {
-  titulo: string;
-  descripcion: string;
-  precio: number;
-  ubicacion: string;
-};
 
 @Component({
   selector: 'app-home',
@@ -15,29 +14,42 @@ type Anuncio = {
 
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private advertismentService: AdvertismentsService, private router: Router, private chatsService: ChatsService) { }
+  myAds: Advertisments[]=[];
+  role: 'driver' | 'passenger' = 'passenger';
 
-  adds: Anuncio[] = [
-    {
-      titulo: "Anuncio 1",
-      descripcion: "Descripción del anuncio 1",
-      precio: 100,
-      ubicacion: "Ciudad 1",
-    },
-    {
-      titulo: "Anuncio 2",
-      descripcion: "Descripción del anuncio 2",
-      precio: 200,
-      ubicacion: "Ciudad 2",
-    },
-    {
-      titulo: "Anuncio 3",
-      descripcion: "Descripción del anuncio 3",
-      precio: 300,
-      ubicacion: "Ciudad 3",
-    },
-  ];
   ngOnInit(): void {
+    this.myAds = this.advertismentService.getPassengerAds();
+  }
+
+  cancelAd(ad: Advertisments) {
+    const index = this.myAds.indexOf(ad);
+    if (index > -1) {
+      this.myAds.splice(index, 1);
+    }
+  }
+  contactUser(ad: Advertisments) {
+    let chat = this.chatsService.getChatByUser(ad.name);
+  
+    if (!chat) {
+      chat = this.chatsService.createChat(ad.name);
+    }
+  
+    this.router.navigate(['/specificChat', chat.id]);
+  }
+  
+  
+  loadAds(): void {
+    if (this.role === 'driver') {
+      this.myAds = this.advertismentService.getDriverAds();
+    } else {
+      this.myAds = this.advertismentService.getPassengerAds();
+    }
+  }
+
+  switchRole(newRole: 'driver' | 'passenger'): void {
+    this.role = newRole;
+    this.loadAds();
   }
 
 }

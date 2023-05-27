@@ -1,1 +1,28 @@
-<p>home works!</p>
+<div class="main-container">
+    <h1 class="title">RoadMate</h1>
+
+    <div class="role-switch">
+        <button class="btn btn-primary" (click)="switchRole('driver')">Ver anuncios como conductor</button>
+        <button class="btn btn-primary" (click)="switchRole('passenger')">Ver anuncios como pasajero</button>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6" *ngFor="let anuncio of myAds">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ anuncio.name }}</h2>
+                        <p class="card-text">Punto de recogida: {{ anuncio.pickupAddress }}</p>
+                        <p class="card-text">Fin de trayecto: {{ anuncio.dropAddress }}</p>
+                        <p class="card-text">Asientos libres: {{ anuncio.freeSeat }}</p>
+                        <p class="card-text">Teléfono: {{ anuncio.phone }}</p>
+                        <p class="card-text">Horario: {{ anuncio.schedule }}</p>
+                        <p class="card-text">Precio: {{ anuncio.price }}€</p>
+                        <button class="btn btn-primary" (click)="cancelAd(anuncio)">Cancelar Viaje</button>
+                        <button class="btn btn-primary" (click)="contactUser(anuncio)">Contactar con {{ anuncio.name }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

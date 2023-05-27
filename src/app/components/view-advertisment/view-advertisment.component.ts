@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Advertisments } from 'src/app/interfaces/advertisments';
 import { AdvertismentsService } from 'src/app/services/advertisments.service';
+import { Router } from '@angular/router'; 
 import * as L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import * as NodeGeocoder from 'node-geocoder';
@@ -14,7 +15,7 @@ import 'leaflet-routing-machine';
 })
 export class ViewAdvertismentComponent implements OnInit {
 
-  constructor(private http: HttpClient, private advertismentService: AdvertismentsService) { }
+  constructor(private http: HttpClient, private advertismentService: AdvertismentsService, private router: Router) { }
   ad: Advertisments | null = null;
 
     async ngOnInit(): Promise<void> {
@@ -116,7 +117,8 @@ async initMap(): Promise<void> {
   }
 
   apuntarse(): void {
-    console.log('Apuntarse al viaje');
+    this.advertismentService.setSelectedAd(this.ad!);
+    this.router.navigate(['/home']);
   }
 
 }

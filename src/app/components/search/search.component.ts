@@ -29,7 +29,8 @@ export class SearchComponent implements OnInit {
       schedule: '7:30',
       price: 2,
       pickupAddress: '28932 Móstoles, Madrid',
-      dropAddress: 'C. Tajo, s/n, 28670 Villaviciosa de Odón, Madrid'
+      dropAddress: 'Universidad Europea de Madrid',
+      role: 'passenger'
     },
     {
       name: 'Anunciante 2',
@@ -38,7 +39,8 @@ export class SearchComponent implements OnInit {
       schedule: '9:00',
       price: 2.5,
       pickupAddress: '28932 Móstoles, Madrid',
-      dropAddress: 'C. Tajo, s/n, 28670 Villaviciosa de Odón, Madrid'
+      dropAddress: 'Universidad Europea de Madrid',
+      role: 'passenger'
     },
     {
       name: 'Anunciante 3',
@@ -46,8 +48,9 @@ export class SearchComponent implements OnInit {
       phone: '987-654-321',
       schedule: '12:00',
       price: 2,
-      pickupAddress: '28932 Móstoles, Madrid',
-      dropAddress: 'C. Tajo, s/n, 28670 Villaviciosa de Odón, Madrid'
+      pickupAddress: '28223 Pozuelo de alarcón, Madrid',
+      dropAddress: 'Universidad Europea de Madrid',
+      role: 'passenger'
     },
     {
       name: 'Anunciante 4',
@@ -55,8 +58,9 @@ export class SearchComponent implements OnInit {
       phone: '987-654-321',
       schedule: '14:15',
       price: 1.5,
-      pickupAddress: '28932 Móstoles, Madrid',
-      dropAddress: 'C. Tajo, s/n, 28670 Villaviciosa de Odón, Madrid'
+      pickupAddress: '28223 Pozuelo de alarcón, Madrid',
+      dropAddress: 'Universidad Europea de Madrid',
+      role: 'passenger'
     },
     {
       name: 'Anunciante 5',
@@ -64,14 +68,15 @@ export class SearchComponent implements OnInit {
       phone: '987-654-321',
       schedule: '15:45pm',
       price: 2,
-      pickupAddress: '28932 Móstoles, Madrid',
-      dropAddress: 'C. Tajo, s/n, 28670 Villaviciosa de Odón, Madrid'
+      pickupAddress: 'Universidad Europea de Madrid',
+      dropAddress: '28660 Boadilla del Monte, Madrid',
+      role: 'passenger'
     }
   ];
 
   addAdvertismentBtn(ad: Advertisments) {
     this.advertismentService.setSelectedAd(ad);
-  this.router.navigate(['/viewAdvertisment']);
+    this.router.navigate(['/viewAdvertisment']);
 
   }
 }
