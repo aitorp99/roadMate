@@ -44,8 +44,8 @@
 
 .btn-primary {
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: #FF4848;
+  border-color: #FF4848;
   border-radius: 10px;
   padding: 10px 20px;
   font-size: 18px;
@@ -56,12 +56,12 @@
 }
 
 .btn-primary:hover {
-  background-color: #0069d9;
-  border-color: #0062cc;
+  background-color: #e73838; /* Color más oscuro para el efecto hover */
+  border-color: #d93232; /* Color más oscuro para el efecto hover */
 }
 .card {
   margin-bottom: 30px;
-  background-color: black; /* Un rojo claro */
+  background-color: #e73838; /* Un rojo claro */
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }

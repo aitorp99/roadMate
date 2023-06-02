@@ -27,12 +27,13 @@ export class CreateAdvertismantComponent implements OnInit {
     const newAd: Advertisments = {
       name: this.nombre, 
       freeSeat: this.asientosLibres,
-      phone: this.telefono, // Aquí debes poner el número de teléfono de quien publica el anuncio
+      phone: this.telefono, 
       schedule: this.horario,
       price: this.precio, 
       pickupAddress: this.origen,
       dropAddress: this.destino,
-      role: 'driver' // Aquí debes poner el rol de quien publica el anuncio
+      role: 'driver',
+      date: this.fecha,
     };
     this.advertismentService.publicAd(newAd);
   }

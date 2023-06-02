@@ -18,7 +18,8 @@ export class AdvertismentsService {
       price: 2,
       pickupAddress: '28932 Móstoles, Madrid',
       dropAddress: 'Universidad Europea de Madrid',
-      role: 'passenger'
+      role: 'passenger',
+      date:'5/6/2023'
     },
     {
       name: 'Eddy',
@@ -28,7 +29,8 @@ export class AdvertismentsService {
       price: 2.5,
       pickupAddress: '28932 Móstoles, Madrid',
       dropAddress: 'Universidad Europea de Madrid',
-      role: 'driver'
+      role: 'driver',
+      date:'5/6/2023'
     },
     {
       name: 'Alberto',
@@ -38,7 +40,8 @@ export class AdvertismentsService {
       price: 2,
       pickupAddress: '28223 Pozuelo de alarcón, Madrid',
       dropAddress: 'Universidad Europea de Madrid',
-      role: 'passenger'
+      role: 'passenger',
+      date:'6/6/2023'
     },
     {
       name: 'Ana',
@@ -48,7 +51,8 @@ export class AdvertismentsService {
       price: 2,
       pickupAddress: '28223 Pozuelo de alarcón, Madrid',
       dropAddress: 'Universidad Europea de Madrid',
-      role: 'driver'
+      role: 'driver',
+      date:'6/6/2023'
     },
     {
       name: 'Erik',
@@ -58,7 +62,8 @@ export class AdvertismentsService {
       price: 2,
       pickupAddress: '28223 Pozuelo de alarcón, Madrid',
       dropAddress: 'Universidad Europea de Madrid',
-      role: 'passenger'
+      role: 'passenger',
+      date:'7/6/2023'
     }
   ];
   
@@ -96,7 +101,8 @@ export class AdvertismentsService {
       price: 2,
       pickupAddress: '28932 Móstoles, Madrid',
       dropAddress: 'Universidad Europea de Madrid',
-      role: 'passenger'
+      role: 'passenger',
+      date:'5/6/2023'
     },
     {
       name: 'Anunciante 2',
@@ -106,7 +112,8 @@ export class AdvertismentsService {
       price: 2.5,
       pickupAddress: '28932 Móstoles, Madrid',
       dropAddress: 'Universidad Europea de Madrid',
-      role: 'passenger'
+      role: 'passenger',
+      date:'5/6/2023'
     },
     {
       name: 'Anunciante 3',
@@ -116,7 +123,8 @@ export class AdvertismentsService {
       price: 2,
       pickupAddress: '28223 Pozuelo de alarcón, Madrid',
       dropAddress: 'Universidad Europea de Madrid',
-      role: 'passenger'
+      role: 'passenger',
+      date:'5/6/2023'
     },
     {
       name: 'Anunciante 4',
@@ -126,7 +134,8 @@ export class AdvertismentsService {
       price: 1.5,
       pickupAddress: '28223 Pozuelo de alarcón, Madrid',
       dropAddress: 'Universidad Europea de Madrid',
-      role: 'passenger'
+      role: 'passenger',
+      date:'5/6/2023'
     },
     {
       name: 'Anunciante 5',
@@ -136,7 +145,8 @@ export class AdvertismentsService {
       price: 2,
       pickupAddress: 'Universidad Europea de Madrid',
       dropAddress: '28660 Boadilla del Monte, Madrid',
-      role: 'passenger'
+      role: 'passenger',
+      date:'5/6/2023'
     }
   ]; 
   publicAd(ad: Advertisments): void {

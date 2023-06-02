@@ -53,4 +53,9 @@ export class HomeComponent implements OnInit {
     this.loadAds();
   }
 
+  showMap(ad: Advertisments) {
+    this.advertismentService.setSelectedAd(ad);
+    this.router.navigate(['/viewAdvertisment']);
+
+  }
 }

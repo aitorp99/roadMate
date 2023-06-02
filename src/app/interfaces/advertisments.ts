@@ -7,5 +7,6 @@ export interface Advertisments {
     pickupAddress: string;
     dropAddress: string;
     role: 'driver' | 'passenger';
+    date: string;
   }
   
