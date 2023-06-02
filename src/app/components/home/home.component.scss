@@ -1,34 +1,118 @@
 .main-container {
-    text-align: center;
-    padding: 50px 0;
-  }
-  
-  .title {
-    font-weight: bold;
-    color: #FF4848;
-    text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
-    margin-bottom: 50px;
-  }
-  
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  
-  .card-container .card {
-    flex: 1 0 calc(50% - 2rem);  /* grow | shrink | basis */
-    margin: 1rem;
-    box-sizing: border-box;
-    max-width: calc(50% - 2rem);
-  }
-  
-  .card {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .card-body {
-    flex: 1;
-  }
-  
+  text-align: center;
+  padding: 50px 0;
+}
+
+.title {
+  font-weight: bold;
+  color: #FF4848;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
+  margin-bottom: 50px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card-container .card {
+  flex: 1 0 calc(50% - 2rem);  
+  margin: 1rem;
+  box-sizing: border-box;
+  max-width: calc(50% - 2rem);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.container {
+  margin-bottom: 50px;
+}
+
+.btn-spacing {
+  margin: 7px;
+}
+
+.card-button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.role-switch {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: calc(50% - 2rem);
+}
+
+.btn-cancel {
+  background-color: #f44336;
+  border-color: #f44336;
+  color: #fff;
+}
+
+.btn-contact {
+  background-color: #4caf50;
+  border-color: #4caf50;
+  color: #fff;
+}
+
+.btn-container button {
+  color: black;
+  background-color: #fff;
+  border: 1px solid black;
+  margin-right: 10px;
+}
+
+.btn-container button.active {
+  color: #fff;
+  background-color: #FF4848;
+  border: none;
+}
+
+
+.card-button-container button.btn-cancel {
+  color: #fff;
+  background-color: #FF4848;
+  border: none;
+}
+
+.card-button-container button.btn-contact {
+  color: #fff;
+  background-color: #4caf50;
+  border: none;
+}
+.info-blocks {
+  border: 1px solid #000;
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.info-block {
+  padding: 10px;
+  border-top: 1px solid #000;
+}
+
+.info-block:first-child {
+  border-top: none;
+}
+
+.card-body {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+

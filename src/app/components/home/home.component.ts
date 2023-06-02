@@ -16,10 +16,11 @@ export class HomeComponent implements OnInit {
 
   constructor(private advertismentService: AdvertismentsService, private router: Router, private chatsService: ChatsService) { }
   myAds: Advertisments[]=[];
-  role: 'driver' | 'passenger' = 'passenger';
+  role: 'driver' | 'passenger' = 'driver';
+  selectedAd: Advertisments | null = null;
 
   ngOnInit(): void {
-    this.myAds = this.advertismentService.getPassengerAds();
+    this.myAds = this.advertismentService.getDriverAds();
   }
 
   cancelAd(ad: Advertisments) {

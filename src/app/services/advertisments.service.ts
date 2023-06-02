@@ -86,5 +86,64 @@ export class AdvertismentsService {
   getPassengerAds(): Advertisments[] {
     return this.userSavedAds.filter(ad => ad.role === 'passenger');
   }
-  
+
+  private publicAds: Advertisments[] = [
+    {
+      name: 'Anunciante 1',
+      freeSeat: 3,
+      phone: '123-456-789',
+      schedule: '7:30',
+      price: 2,
+      pickupAddress: '28932 Móstoles, Madrid',
+      dropAddress: 'Universidad Europea de Madrid',
+      role: 'passenger'
+    },
+    {
+      name: 'Anunciante 2',
+      freeSeat: 1,
+      phone: '987-654-321',
+      schedule: '9:00',
+      price: 2.5,
+      pickupAddress: '28932 Móstoles, Madrid',
+      dropAddress: 'Universidad Europea de Madrid',
+      role: 'passenger'
+    },
+    {
+      name: 'Anunciante 3',
+      freeSeat: 2,
+      phone: '987-654-321',
+      schedule: '12:00',
+      price: 2,
+      pickupAddress: '28223 Pozuelo de alarcón, Madrid',
+      dropAddress: 'Universidad Europea de Madrid',
+      role: 'passenger'
+    },
+    {
+      name: 'Anunciante 4',
+      freeSeat: 2,
+      phone: '987-654-321',
+      schedule: '14:15',
+      price: 1.5,
+      pickupAddress: '28223 Pozuelo de alarcón, Madrid',
+      dropAddress: 'Universidad Europea de Madrid',
+      role: 'passenger'
+    },
+    {
+      name: 'Anunciante 5',
+      freeSeat: 3,
+      phone: '987-654-321',
+      schedule: '15:45pm',
+      price: 2,
+      pickupAddress: 'Universidad Europea de Madrid',
+      dropAddress: '28660 Boadilla del Monte, Madrid',
+      role: 'passenger'
+    }
+  ]; 
+  publicAd(ad: Advertisments): void {
+    this.publicAds.push(ad);
+  }
+
+  getPublicAds(): Advertisments[] {
+    return this.publicAds;
+  }
 }

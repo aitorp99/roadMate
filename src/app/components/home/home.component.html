@@ -2,24 +2,30 @@
     <h1 class="title">RoadMate</h1>
 
     <div class="role-switch">
-        <button class="btn btn-primary" (click)="switchRole('driver')">Ver anuncios como conductor</button>
-        <button class="btn btn-primary" (click)="switchRole('passenger')">Ver anuncios como pasajero</button>
+        <div class="btn-container">
+            <button class="btn btn-primary" (click)="switchRole('driver')" [ngClass]="{'active': role === 'driver'}">Ver anuncios como conductor</button>
+            <button class="btn btn-primary" (click)="switchRole('passenger')" [ngClass]="{'active': role === 'passenger'}">Ver anuncios como pasajero</button>
+        </div>
     </div>
-
+    
     <div class="container">
         <div class="row">
             <div class="col-md-6" *ngFor="let anuncio of myAds">
                 <div class="card">
                     <div class="card-body">
                         <h2 class="card-title">{{ anuncio.name }}</h2>
-                        <p class="card-text">Punto de recogida: {{ anuncio.pickupAddress }}</p>
-                        <p class="card-text">Fin de trayecto: {{ anuncio.dropAddress }}</p>
-                        <p class="card-text">Asientos libres: {{ anuncio.freeSeat }}</p>
-                        <p class="card-text">Teléfono: {{ anuncio.phone }}</p>
-                        <p class="card-text">Horario: {{ anuncio.schedule }}</p>
-                        <p class="card-text">Precio: {{ anuncio.price }}€</p>
-                        <button class="btn btn-primary" (click)="cancelAd(anuncio)">Cancelar Viaje</button>
-                        <button class="btn btn-primary" (click)="contactUser(anuncio)">Contactar con {{ anuncio.name }}</button>
+                        <div class="info-blocks">
+                            <div class="info-block">Punto de recogida: {{ anuncio.pickupAddress }}</div>
+                            <div class="info-block">Fin de trayecto: {{ anuncio.dropAddress }}</div>
+                            <div class="info-block">Asientos libres: {{ anuncio.freeSeat }}</div>
+                            <div class="info-block">Teléfono: {{ anuncio.phone }}</div>
+                            <div class="info-block">Horario: {{ anuncio.schedule }}</div>
+                            <div class="info-block">Precio: {{ anuncio.price }}€</div>
+                        </div>
+                        <div class="card-button-container">
+                            <button class="btn btn-cancel" (click)="cancelAd(anuncio)" [ngClass]="{'active': selectedAd === anuncio}">Cancelar Viaje</button>
+                            <button class="btn btn-contact" (click)="contactUser(anuncio)" [ngClass]="{'active': selectedAd === anuncio}">Contactar con {{ anuncio.name }}</button>
+                        </div>
                     </div>
                 </div>
             </div>

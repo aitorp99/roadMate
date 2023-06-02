@@ -2,22 +2,24 @@
     <h1 class="title">RoadMate</h1>
     <div class="container">
         <div class="row">
-        <div class="col-sm-6" *ngFor="let anuncio of ads">
-            <div class="card">
-            <div class="card-body">
-                <h2 class="card-title">{{ anuncio.name }}</h2>
-                <p class="card-text">Punto de recogida: {{ anuncio.pickupAddress }}</p>
-                <p class="card-text">Fin de trayecto: {{ anuncio.dropAddress }}</p>
-                <p class="card-text">Asientos libres: {{ anuncio.freeSeat }}</p>
-                <p class="card-text">Teléfono: {{ anuncio.phone }}</p>
-                <p class="card-text">Horario: {{ anuncio.schedule }}</p>
-                <p class="card-text">Precio: {{ anuncio.price }}€</p>
-                
-                <button class="btn btn-primary" (click)="addAdvertismentBtn(anuncio)">Ver anuncio</button>
+            <div class="col-sm-6" *ngFor="let anuncio of ads">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-body">
+                            <h2 class="card-title">{{ anuncio.name }}</h2>
+                            <div class="info-blocks">
+                                <div class="info-block">Punto de recogida: {{ anuncio.pickupAddress }}</div>
+                                <div class="info-block">Fin de trayecto: {{ anuncio.dropAddress }}</div>
+                                <div class="info-block">Asientos libres: {{ anuncio.freeSeat }}</div>
+                                <div class="info-block">Teléfono: {{ anuncio.phone }}</div>
+                                <div class="info-block">Horario: {{ anuncio.schedule }}</div>
+                                <div class="info-block">Precio: {{ anuncio.price }}€</div>
+                            </div>
+                            <button class="btn btn-primary" (click)="addAdvertismentBtn(anuncio)">Ver anuncio</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            </div>
-        </div>
         </div>
     </div>
-  </div>
-  
+</div>

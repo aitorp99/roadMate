@@ -1,36 +1,52 @@
-<div class="login">
-    <div class="form-ubication">
-    <h1 class="title">RoadMate</h1>
-    <div *ngIf="errorMessage" class="error-message">ERROR - DATOS INCORRECTOS</div>
-    <h1>Publicacion de Anuncio</h1>
-        <form>
-            <!-- Origen -->
-            <div class="form-group">
-                <label class="txt">Origen</label>
-                <input type="text" class="form-control" placeholder="Origen" [(ngModel)]="origen " name="origen">
-            </div>
+<div class="main-container">
+    <h1 class="title mb-3">RoadMate</h1>
 
-            <!-- Destino -->
-            <div class="form-group">
-                <label class="txt" for="name">Destino</label>
-                <input type="text" class="form-control" placeholder="Destino" [(ngModel)]="destino" name="destino">
-            </div>
-
-             <!-- fecha -->
-             <div class="form-group">
-                <label class="txt" for="name">Fecha</label>
-                <input type="text" class="form-control" placeholder="dia/mes/ano" [(ngModel)]="fecha" name="fecha">
-            </div>
-
-            <!-- Horario -->
-            <div class="form-group">
-                <label class="txt" for="name">Hora</label>
-                <input type="text" class="form-control" placeholder="00:00:00" [(ngModel)]="horario" name="horario">
-            </div>
-
-
-            <input (click)="PublicarAnuncio()" type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Anuncio"> 
-        </form>
-        <!--<a href="/Registrarse" class="registro"> Ya tengo una cuenta </a>  -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-10 col-xl-8">
+                <div class="image-container mb-3">
+                  <!--<img src="./assets/amigosCoche.jpeg" class="img-fluid">-->
+                </div>
+                <h2 class="text-center mb-3">Publicar Anuncio</h2>
+                <form>
+                <div class="form-group py-2">
+                    <div class="form-group">
+                        <label class="txt"></label>
+                        <input type="text" class="form-control" placeholder="Nombre" [(ngModel)]="nombre" name="horario">
+                    </div>
+                    <div class="form-group">
+                        <label class="txt"></label>
+                        <input type="text" class="form-control" placeholder="Asientos Libres" [(ngModel)]="asientosLibres" name="horario">
+                    </div>
+                    <div class="form-group">
+                        <label class="txt"></label>
+                        <input type="text" class="form-control" placeholder="Precio" [(ngModel)]="precio" name="horario">
+                    </div>
+                    <div class="form-group">
+                        <label class="txt"></label>
+                        <input type="text" class="form-control" placeholder="Número de teléfono" [(ngModel)]="telefono" name="horario">
+                    </div>
+                    <div class="form-group">
+                        <label class="txt"></label>
+                        <input type="text" class="form-control" placeholder="Dirección Origen" [(ngModel)]="origen" name="origen">
+                    </div>
+                    <div class="form-group">
+                        <label class="txt"></label>
+                        <input type="text" class="form-control" placeholder="Dirección Destino" [(ngModel)]="destino" name="destino">
+                    </div>
+                    <div class="form-group">
+                        <label class="txt"></label>
+                        <input type="text" class="form-control" placeholder="dia/mes/año" [(ngModel)]="fecha" name="fecha">
+                    </div>
+                    <div class="form-group">
+                        <label class="txt"></label>
+                        <input type="text" class="form-control" placeholder="Hora:Minutos" [(ngModel)]="horario" name="horario">
+                    </div>
+                    <input (click)="PublicarAnuncio()" type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Publicar Anuncio"> 
+                    </div>
+                </form>
+        </div>
+    </div>
     </div>
 </div>
+
