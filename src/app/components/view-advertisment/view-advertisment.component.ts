@@ -125,8 +125,12 @@ async initMap(): Promise<void> {
   }
 
   apuntarse(): void {
-    this.advertismentService.setSelectedAd(this.ad!);
-    this.router.navigate(['/home']);
+    if (this.ad) {
+      const adCopy = { ...this.ad }; // Create a copy of the ad
+      this.advertismentService.saveAd(adCopy); // Save the ad in the service
+      this.router.navigate(['/home']);
+    }
   }
+  
 
 }

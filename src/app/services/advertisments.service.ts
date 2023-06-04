@@ -90,6 +90,10 @@ export class AdvertismentsService {
   saveAd(ad: Advertisments): void {
     this.userSavedAds.push(ad);
   }
+  saveAd2(ad: Advertisments): void {
+    this.defaultSavedAds.push(ad);
+  }
+  
   
   getDriverAds(): Advertisments[] {
     return this.userSavedAds.filter(ad => ad.role === 'driver');
