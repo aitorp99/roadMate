@@ -1,19 +1,20 @@
-<div class="container">
-    <h1 class="chat-title">{{ selectedChat?.name }}</h1>
-  
-    <div class="messages">
-      <div class="message" [ngClass]="{'message-right': message.sender === 'Tú', 'message-left': message.sender !== 'Tú'}" *ngFor="let message of selectedChat?.messages">
-        <div class="sender">{{ message.sender }}</div>
-        <div class="content">{{ message.content }}</div>
+<div class="main-container">
+  <h1 class="title">RoadMate</h1>
+  <div class="container d-flex flex-column justify-content-between"> <!-- Agregar d-flex flex-column justify-content-between para utilizar flex -->
+      <h1 class="chat-title">{{ selectedChat?.name }}</h1>
+    
+      <div class="messages">
+        <div class="message" [ngClass]="{'message-right': message.sender === 'Tú', 'message-left': message.sender !== 'Tú'}" *ngFor="let message of selectedChat?.messages">
+          <!--<div class="sender">{{ message.sender }}</div>-->
+          <div class="content">{{ message.content }}</div>
+        </div>
       </div>
-    </div>
-  
-    <div class="send-message">
-      <input [(ngModel)]="newMessage" placeholder="Type your message here" />
-      <!--<button (click)="sendMessage()" style="background-color: red">Enviar</button>-->
-      <button (click)="sendMessage()">
-        <i class="fas fa-paper-plane"></i>
-      </button>
-    </div>
+    
+      <div class="send-message mt-auto"> <!-- Agregar mt-auto para asegurarse de que este contenedor esté en la parte inferior -->
+        <input [(ngModel)]="newMessage" placeholder="Escribe tu mensaje" class="form-control" />
+        <button (click)="sendMessage()" class="btn btn-primary">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
   </div>
-  
+</div>

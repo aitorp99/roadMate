@@ -1,2 +1,2 @@
 <router-outlet></router-outlet>
-<app-buttom-navigation></app-buttom-navigation>
+<app-buttom-navigation *ngIf="router.url !== '/' && router.url !== '/register'"></app-buttom-navigation>

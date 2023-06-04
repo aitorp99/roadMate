@@ -56,15 +56,18 @@
 }
 
 .btn-primary:hover {
-  background-color: #e73838; /* Color más oscuro para el efecto hover */
-  border-color: #d93232; /* Color más oscuro para el efecto hover */
+  background-color: #e73838; 
+  border-color: #d93232;
 }
 .card {
-  margin-bottom: 30px;
-  background-color: #e73838; /* Un rojo claro */
+  margin-bottom: 20px; /* Reducir el margen inferior */
+  margin-right: 20px;
+  width: 100%; /* Ajustar el ancho de las tarjetas */
+  background-color: #e73838;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
+
 
 .card-inner {
   background-color: #fff;
@@ -72,6 +75,53 @@
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+
 }
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-section {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.ads-section {
+  flex: 3;
+}
+.filter-row {
+  margin-bottom: 15px;
+}
+
+.filter-row label {
+  font-weight: bold;
+  color: #333;
+  margin-right: 10px;
+}
+
+.filter-row input[type="date"],
+.filter-row input[type="time"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.filter-row input[type="date"],
+.filter-row input[type="time"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px; /* Aumentar el tamaño de fuente */
+  text-align: center; /* Centrar el texto */
+}
+
+.filter-row input[type="date"]::-webkit-calendar-picker-indicator,
+.filter-row input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+
 
 

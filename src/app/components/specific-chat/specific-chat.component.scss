@@ -1,59 +1,90 @@
+.main-container {
+    text-align: center;
+    padding: 50px 0;
+}
+  
+.title {
+  font-weight: bold;
+  color: #FF4848;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
+  margin-bottom: 50px;
+}
 .container {
-    display: flex;
-    flex-direction: column;
-    height: 90vh; /* Asegura que el contenedor ocupe toda la altura de la pantalla */
-  }
-  
-  .messages {
-    overflow-y: auto;
-    flex-grow: 1;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  
-  .message {
-    max-width: 80%;
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 10px;
-  }
-  
-  .message-right {
-    margin-left: auto;
-    background-color: #d1e7dd;
-  }
-  
-  .message-left {
-    background-color: #f0f0f0;
-  }
-  .send-message input {
-    flex-grow: 1;
-    margin-right: 10px;
-  }
-  
-  .send-message {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: white;
-    /* Asegura que la barra de enviar mensaje se mantenga en la parte inferior */
-    position: sticky;
-    bottom: 0;
-  }
-  .send-message button {
-    display: flex;
-    align-items: center;
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .send-message button i {
-    margin-right: 0px; /* Ajusta el valor según tus necesidades */
-    line-height: 1;
-  }
-  
-  
+  display: flex;
+  flex-direction: column;
+  min-height: 73vh; /* Asegura que el contenedor ocupe toda la altura de la pantalla */
+}
+
+.chat-title {
+  text-align: center;
+}
+
+.messages {
+  overflow-y: auto;
+  flex-grow: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  max-width: 80%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.message-right {
+  margin-left: auto;
+  background-color: #FFDDDD; /* Rojo claro */
+  text-align: right;
+}
+
+.sender {
+  text-align: center;
+}
+
+.message-left {
+  background-color: #f0f0f0;
+  text-align: left;
+}
+
+.send-message input {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.send-message button {
+  display: flex;
+  align-items: center;
+  background: red; /* color de fondo más notorio para probar */
+  border: none;
+  padding: 10px; /* agregar algo de padding para que sea más grande */
+  margin: 0;
+  color: #000;
+}
+.send-message {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  color: #000;
+  bottom: 0;
+  z-index: 1000; /* esto debería poner el contenedor por encima de la mayoría de otros elementos */
+}
+
+
+
+
+.send-message button {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.send-message button i {
+  margin-right: 0px; /* Ajusta el valor según tus necesidades */
+  line-height: 1;
+}

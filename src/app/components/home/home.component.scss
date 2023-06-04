@@ -24,10 +24,27 @@
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
   margin-bottom: 30px;
+  background-color: #e73838; /* Color de fondo del reborde exterior */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
+
+.card-inner {
+  background-color: #fff; /* Color de fondo del reborde interior */
+  margin: 15px; /* Ancho del reborde exterior */
+  padding: 10px; /* Espacio entre el reborde interior y el contenido de la tarjeta */
+  border-radius: 5px; /* Radio de borde del reborde interior */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-body {
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+
 
 .container {
   margin-bottom: 50px;
@@ -56,15 +73,17 @@
 }
 
 .btn-cancel {
-  background-color: #f44336;
-  border-color: #f44336;
-  color: #fff;
+  color: black;
+  background-color: #fff;
+  border: 1px solid black;
+  margin-right: 10px;
 }
 
 .btn-contact {
-  background-color: #4caf50;
-  border-color: #4caf50;
-  color: #fff;
+  color: black;
+  background-color: #fff;
+  border: 1px solid black;
+  margin-right: 10px;
 }
 .btn-map {
   color: black;
@@ -88,22 +107,37 @@
 
 
 .card-button-container button.btn-cancel {
-  color: #fff;
-  background-color: #FF4848;
-  border: none;
+  color: black;
+  background-color: #fff;
+  border: 1px solid black;
 }
 
 .card-button-container button.btn-contact {
-  color: #fff;
-  background-color: #4caf50;
-  border: none;
+  color: black;
+  background-color: #fff;
+  border: 1px solid black;
+}
+
+
+.info-block-inner {
+  background-color: #fff;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
 }
 .info-blocks {
-  border: 1px solid #000;
-  border-radius: 10px;
+  border: 1px solid #000; /* Borde alrededor de todos los bloques de información */
+  border-radius: 10px; /* Bordes redondeados en la parte superior */
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   margin: 10px 0;
+  padding: 0; /* Eliminamos el padding */
+}
+
+.info-card {
+  padding: 10px; /* Movemos el relleno a cada celda */
+  margin: 0; /* Eliminamos los margenes */
 }
 
 .info-block {
@@ -112,13 +146,10 @@
 }
 
 .info-block:first-child {
-  border-top: none;
+  border-top: none; /* Esto evitará que el primer bloque de información tenga un borde superior */
 }
 
-.card-body {
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
-}
+
+
+
 

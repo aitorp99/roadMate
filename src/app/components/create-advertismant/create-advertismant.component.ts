@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdvertismentsService } from 'src/app/services/advertisments.service';
 import { Advertisments } from 'src/app/interfaces/advertisments';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-advertismant',
@@ -9,7 +10,7 @@ import { Advertisments } from 'src/app/interfaces/advertisments';
 })
 export class CreateAdvertismantComponent implements OnInit {
 
-  constructor(private advertismentService: AdvertismentsService) { }
+  constructor(private advertismentService: AdvertismentsService, private router: Router) { }
   origen: any;
   error:string = "ERROR - DATOS INCORRECTOS"
   errorMessage:boolean = false;
@@ -35,7 +36,8 @@ export class CreateAdvertismantComponent implements OnInit {
       role: 'driver',
       date: this.fecha,
     };
-    this.advertismentService.publicAd(newAd);
+    this.advertismentService.saveAd(newAd);
+    this.router.navigate(['/home']);
   }
 
 }

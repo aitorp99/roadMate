@@ -1,7 +1,46 @@
+.main-container {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.title {
+    font-weight: bold;
+    color: #FF4848;
+    text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
+    margin-bottom: 50px;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #FF4848;
+    border-color: #FF4848;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    display: inline-block;
+    text-decoration: none;
+  }
+.profile-pic {
+    width: 100px;
+    height: 100px;
+}
+
 .perfil img {
     border-radius: 50%;
-    width: 150px; /* Ajusta el tamaño de la imagen aquí */
-    height: 150px; /* Asegúrate de que el ancho y el alto sean iguales para mantener la imagen circular */
+    width: 150px;
+    height: 150px;
     background-color: black;
+    margin: 0 auto; /* Centrar la imagen */
 }
-  
+
+.perfil .informacion, .perfil form {
+    text-align: left;
+    max-width: 500px; /* Ajustar según sea necesario */
+    margin: 0 auto; /* Centrar el contenido */
+}
+
+.btn {
+    display: block;
+    margin: 20px auto; /* Centrar el botón y agregar espacio alrededor */
+}

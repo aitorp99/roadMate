@@ -11,30 +11,30 @@ export class ChatsService {
   chats: Chat[] = [
     {
       id: '1',
-      name: 'Usuario 1',
+      name: 'Eddy',
       profilePic: "../assets/programmer.png",
       messages: [
-        { sender: 'Usuario 1', content: 'Hola, ¿cómo estás?' },
+        { sender: 'Eddy', content: 'Hola, ¿cómo estás?' },
         { sender: 'Tú', content: 'Hola, bien gracias. ¿Y tú?' },
-        { sender: 'Usuario 1', content: 'Bien gracias, mañana estaré en el punto de recojida a la hora espeficicada' },
+        { sender: 'Eddy', content: 'Bien gracias, mañana estaré en el punto de recojida a la hora espeficicada' },
         { sender: 'Tú', content: 'Perfecto gracias!' },
       ],
     },
     {
       id: '2',
-      name: 'Usuario 2',
-      profilePic: "",
+      name: 'luis',
+      profilePic: "../assets/userPic2.png",
       messages: [
-        { sender: 'Usuario 2', content: 'Mañana a la misma hora?' },
-        { sender: 'Tú', content: 'Si mañana a la hora de siempre!' },
+        { sender: 'Ana', content: 'Mañana a la misma hora?' },
+        { sender: 'Luis', content: 'Si mañana a la hora de siempre!' },
       ],
     },
     {
       id: '3',
-      name: 'Usuario 3',
-      profilePic: "",
+      name: 'Jorge',
+      profilePic: "../assets/userPic3.webp",
       messages: [
-        { sender: 'Usuario 3', content: 'Hola, tengo una pregunta' },
+        { sender: 'Jorge', content: 'Hola, tengo una pregunta' },
         { sender: 'Tú', content: 'Claro, ¿qué necesitas saber?' },
       ],
     },

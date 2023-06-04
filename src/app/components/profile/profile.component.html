@@ -1,26 +1,39 @@
-<div class="perfil">
-    <img [src]="user.imageUrl" alt="Foto de perfil">
-    <div *ngIf="!editing" class="informacion">
-      <p>Nombre: {{ user.name }} <button class="btn" (click)="toggleEdit()"><i class="fa-solid fa-pencil"></i></button></p>
-      <p>Email: {{ user.email }} <button class="btn" (click)="toggleEdit()"><i class="fa-solid fa-pencil"></i></button></p>
-      <p>Teléfono: {{ user.phone }} <button class="btn" (click)="toggleEdit()"><i class="fa-solid fa-pencil"></i></button></p>
-    </div>
-    <form *ngIf="editing" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-      <label>
-        Nombre:
-        <input type="text" formControlName="name">
-      </label>
-      <label>
-        Email:
-        <input type="email" formControlName="email">
-      </label>
-      <label>
-        Teléfono:
-        <input type="tel" formControlName="phone">
-      </label>
-      <button type="submit" class="btn btn-success" (click)="saveChanges">Guardar cambios</button>
-      <button type="button" class="btn btn-danger" (click)="toggleEdit()">Cancelar</button>
-    </form>
-    <button class="btn btn-primary" (click)="logout()">Cerrar sesión</button>
+<div class="main-container">
+  <h1 class="title">RoadMate</h1>
+  <div class="container-fluid d-flex flex-column justify-content-center align-items-center">
+      <img [src]="user.imageUrl" class="rounded-circle mb-3 profile-pic" alt="Foto de perfil">
+      <div class="informacion text-center">
+          <div class="row align-items-center">
+              <div class="col-sm-10">
+                  <span *ngIf="!editing.name"><b>Nombre: </b>{{ user.name }}</span>
+                  <input type="text" *ngIf="editing.name" [(ngModel)]="user.name" class="form-control">
+              </div>
+              <div class="col-sm-2 text-end">
+                  <button class="btn" *ngIf="!editing.name" (click)="toggleEdit('name')"><i class="fa-solid fa-pencil"></i></button>
+                  <button class="btn btn-success" *ngIf="editing.name" (click)="applyChanges('name')"><i class="fa-solid fa-check"></i></button>
+              </div>
+          </div>
+          <div class="row align-items-center">
+              <div class="col-sm-10">
+                  <span *ngIf="!editing.email"><b>Email: </b>{{ user.email }}</span>
+                  <input type="email" *ngIf="editing.email" [(ngModel)]="user.email" class="form-control">
+              </div>
+              <div class="col-sm-2 text-end">
+                  <button class="btn" *ngIf="!editing.email" (click)="toggleEdit('email')"><i class="fa-solid fa-pencil"></i></button>
+                  <button class="btn btn-success" *ngIf="editing.email" (click)="applyChanges('email')"><i class="fa-solid fa-check"></i></button>
+              </div>
+          </div>
+          <div class="row align-items-center">
+              <div class="col-sm-10">
+                  <span *ngIf="!editing.phone"><b>Teléfono: </b>{{ user.phone }}</span>
+                  <input type="tel" *ngIf="editing.phone" [(ngModel)]="user.phone" class="form-control">
+              </div>
+              <div class="col-sm-2 text-end">
+                  <button class="btn" *ngIf="!editing.phone" (click)="toggleEdit('phone')"><i class="fa-solid fa-pencil"></i></button>
+                  <button class="btn btn-success" *ngIf="editing.phone" (click)="applyChanges('phone')"><i class="fa-solid fa-check"></i></button>
+              </div>
+          </div>
+      </div>
+      <button class="btn btn-primary mt-3" (click)="logout()">Cerrar sesión</button>
   </div>
-  
+</div>

@@ -36,13 +36,13 @@
                     </div>
                     <div class="form-group">
                         <label class="txt"></label>
-                        <input type="text" class="form-control" placeholder="dia/mes/año" [(ngModel)]="fecha" name="fecha">
+                        <input type="text" class="form-control" placeholder="dia-mes-año" [(ngModel)]="fecha" name="fecha">
                     </div>
                     <div class="form-group">
                         <label class="txt"></label>
                         <input type="text" class="form-control" placeholder="Hora:Minutos" [(ngModel)]="horario" name="horario">
                     </div>
-                    <input (click)="PublicarAnuncio()" type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Publicar Anuncio"> 
+                    <button class="btn btn-primary" (click)="PublicarAnuncio()">Publicar Anuncio</button>
                     </div>
                 </form>
         </div>

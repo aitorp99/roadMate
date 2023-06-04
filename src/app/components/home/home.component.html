@@ -12,21 +12,23 @@
         <div class="row">
             <div class="col-md-6" *ngFor="let anuncio of myAds">
                 <div class="card">
-                    <div class="card-body">
+                  <div class="card-inner">
+                    <div class="card-body">              
                         <h2 class="card-title">{{ anuncio.name }}</h2>
                         <div class="info-blocks">
-                            <div class="info-block"><b><em>Fecha: </em></b>{{ anuncio.date }}</div>
-                            <div class="info-block"><b><em>Horario: </em></b>{{ anuncio.schedule }}</div>
-                            <div class="info-block"><b><em>Punto de recogida: </em></b>{{ anuncio.pickupAddress }}</div>
-                            <div class="info-block"><b><em>Fin de trayecto: </em></b>{{ anuncio.dropAddress }}</div>
-                            <div class="info-block"><b><em>Asientos libres: </em></b>{{ anuncio.freeSeat }}</div>
-                            <div class="info-block"><b><em>Teléfono: </em></b>{{ anuncio.phone }}</div>
-                            <div class="info-block"><b><em>Precio: </em></b>{{ anuncio.price }}€</div>
+                            <div class="info-block info-card"><b><em>Fecha: </em></b>{{ anuncio.date }}</div>
+                            <div class="info-block info-card"><b><em>Horario: </em></b>{{ anuncio.schedule }}</div>
+                            <div class="info-block info-card"><b><em>Punto de recogida: </em></b>{{ anuncio.pickupAddress }}</div>
+                            <div class="info-block info-card"><b><em>Fin de trayecto: </em></b>{{ anuncio.dropAddress }}</div>
+                            <div class="info-block info-card"><b><em>Asientos libres: </em></b>{{ anuncio.freeSeat }}</div>
+                            <div class="info-block info-card"><b><em>Teléfono: </em></b>{{ anuncio.phone }}</div>
+                            <div class="info-block info-card"><b><em>Precio: </em></b>{{ anuncio.price }}€</div>
+                            
                         </div>
                         <div class="card-button-container">
-                            <button class="btn btn-cancel" (click)="cancelAd(anuncio)" [ngClass]="{'active': selectedAd === anuncio}">Cancelar Viaje</button>
-                            <button class="btn btn-map" (click)="showMap(anuncio)">Mapa</button>
-                            <button class="btn btn-contact" (click)="contactUser(anuncio)" [ngClass]="{'active': selectedAd === anuncio}">Contactar con {{ anuncio.name }}</button>
+                            <button class="btn btn-cancel" (click)="cancelAd(anuncio)" [ngClass]="{'active': selectedAd === anuncio}"><b>Cancelar Viaje</b></button>
+                            <button class="btn btn-map" (click)="showMap(anuncio)"><b>Mapa</b></button>
+                            <button class="btn btn-contact" (click)="contactUser(anuncio)" *ngIf="role === 'passenger'" [ngClass]="{'active': selectedAd === anuncio}"><b>Contactar con {{ anuncio.name }}</b></button>
                         </div>
                         
                     </div>

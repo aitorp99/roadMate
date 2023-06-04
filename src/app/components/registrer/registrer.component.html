@@ -1,47 +1,38 @@
 
-<div class="login">
-    <div class="form-ubication">
-    <div *ngIf="errorMessage" class="error-message">ERROR - DATOS INCORRECTOS</div>
-    <h1>Publicacion de anuncios</h1>
-        <form>
-            <!-- User Name -->
-            <div class="form-group">
-                <label class="txt">Nombre De Usuario</label>
-                <input type="text" class="form-control" placeholder="Introduzca el nombre de usuario deseado" [(ngModel)]="userName " name="userName">
-            </div>
+<div class="main-container">
+    <h1 class="title">RoadMate</h1>
+    <div class="login">
+        <div class="form-ubication">
+        <div *ngIf="errorMessage" class="error-message">ERROR</div>
+        <h1>Crear Cuenta</h1>
+            <form>
+                <!-- Name -->
+                <div class="form-group">
+                    <label class="txt" for="name">Nombre</label>
+                    <input type="text" class="form-control" placeholder="Nombre" [(ngModel)]="name"name="name">
+                </div>
 
-            <!-- Name -->
-            <div class="form-group">
-                <label class="txt" for="name">Nombre</label>
-                <input type="text" class="form-control" placeholder="Introduzca tu nombre" [(ngModel)]="name"name="name">
-            </div>
+                <!-- Email -->
+                <div class="form-group">
+                    <label class="txt" for="email">Correo Eletronico</label>
+                    <input type="email" class="form-control" placeholder="ejemplo@roadMate.com" [(ngModel)]="email" name="email">
+                </div>
 
-            <!-- Last Name -->
-            <div class="form-group">
-                <label class="txt" for="name">Apellido</label>
-                <input type="text" class="form-control" placeholder="Introduzca tu apellido" [(ngModel)]="lastName"name="Last Name">
-            </div>
+                <!-- Password -->
+                <div class="form-group">
+                    <label class="txt">Contrasena</label>
+                    <input type="password" class="form-control" placeholder="Contraseña" [(ngModel)]="password" name="password">
+                </div>
 
-            <!-- Email -->
-            <div class="form-group">
-                <label class="txt" for="email">Correo Eletronico</label>
-                <input type="email" class="form-control" placeholder="Introduzca tu correo eletronico" [(ngModel)]="email" name="email">
-            </div>
+                <!-- telefono -->
+                <div class="form-group">
+                    <label class="txt">Telefono</label>
+                    <input type="text" class="form-control" placeholder="Teléfono" [(ngModel)]="telefono" name="telefono">
+                </div>
 
-            <!-- Password -->
-            <div class="form-group">
-                <label class="txt">Contrasena</label>
-                <input type="password" class="form-control" placeholder="Introduzca la contrasena deseada" [(ngModel)]="password" name="password">
-            </div>
-
-            <!-- telefono -->
-            <div class="form-group">
-                <label class="txt">Telefono</label>
-                <input type="text" class="form-control" placeholder="Introduzca tu numero de telefono" [(ngModel)]="telefono" name="telefono">
-            </div>
-
-            <input (click)="AceptRegisterbutton()" type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Registrarse"> 
-        </form>
-         <a href="/Registrarse" class="registro"> Ya tengo una cuenta </a> 
+                <input (click)="AceptRegisterbutton()" type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Registrarse"> 
+            </form>
+            <a href="/" class="registro"> Ya tengo una cuenta </a> 
+        </div>
     </div>
 </div>

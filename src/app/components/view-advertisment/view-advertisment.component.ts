@@ -3,6 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { Advertisments } from 'src/app/interfaces/advertisments';
 import { AdvertismentsService } from 'src/app/services/advertisments.service';
 import { Router } from '@angular/router'; 
+import { Location } from '@angular/common';
+import { NavigationService } from 'src/app/services/navigation.service';
+
 import * as L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import * as NodeGeocoder from 'node-geocoder';
@@ -15,10 +18,14 @@ import 'leaflet-routing-machine';
 })
 export class ViewAdvertismentComponent implements OnInit {
 
-  constructor(private http: HttpClient, private advertismentService: AdvertismentsService, private router: Router) { }
+  constructor(private http: HttpClient, private advertismentService: AdvertismentsService, private router: Router, private location: Location, private navigationService: NavigationService) { }
   ad: Advertisments | null = null;
-
+  isFromSearch!: boolean;
     async ngOnInit(): Promise<void> {
+      this.isFromSearch = this.navigationService.getPreviousUrl()?.includes('search') || false;
+      console.log('Previous URL:', this.navigationService.getPreviousUrl());
+    console.log('Is from search:', this.isFromSearch);
+
       this.ad = this.advertismentService.getSelectedAd();
       if (this.ad) {
         this.initMap();
@@ -74,7 +81,7 @@ async initMap(): Promise<void> {
 
   routingControl.on('routeselected', (e: any) => {
     const route = e.route;  
-
+/*
     let instructions = '<h2>Instrucciones de la ruta</h2><ol>';
     for (let i = 0; i < route.instructions.length; i++) {
       const instruction = route.instructions[i];
@@ -83,6 +90,7 @@ async initMap(): Promise<void> {
     instructions += '</ol>';
 
     document.getElementById('route-instructions')!.innerHTML = instructions;
+*/
   });
 
   // Esto esconde el panel de instrucciones

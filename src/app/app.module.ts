@@ -16,6 +16,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CreateAdvertismantComponent } from './components/create-advertismant/create-advertismant.component';
 import { ViewAdvertismentComponent } from './components/view-advertisment/view-advertisment.component';
+import { DateFilterPipe } from './pipes/date-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ViewAdvertismentComponent } from './components/view-advertisment/view-a
     SpecificChatComponent,
     ProfileComponent,
     CreateAdvertismantComponent,
-    ViewAdvertismentComponent
+    ViewAdvertismentComponent,
+    DateFilterPipe
   ],
   imports: [
     BrowserModule,

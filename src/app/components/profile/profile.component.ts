@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/interfaces/users';
 import { UsersService } from 'src/app/services/users.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-profile',
@@ -10,10 +11,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private usersService: UsersService, private fb: FormBuilder) { }
+  constructor(private usersService: UsersService, private fb: FormBuilder, private router: Router) { }
   user!: User;
   profileForm!: FormGroup;
-  editing: boolean = false;
   ngOnInit() {
     this.user = this.usersService.usersData[0];
     
@@ -25,16 +25,24 @@ export class ProfileComponent implements OnInit {
   }
 
   logout() {
+    this.router.navigate(['/']);
+  }
+  editing: { [K in 'name' | 'email' | 'phone']?: boolean } = {};
 
+  toggleEdit(field: 'name' | 'email' | 'phone') {
+    this.editing[field] = !this.editing[field];
   }
-  toggleEdit() {
-    this.editing = !this.editing;
-  }
+  
+  
   onSubmit() {
     console.log(this.profileForm.value);
   }
-  saveChanges() {
-    
-  }
+  applyChanges(field: 'name' | 'email' | 'phone') {
+    // Aquí puedes guardar los cambios.
+    // Después, vuelve al modo de visualización para ese campo.
+    this.editing[field] = false;
+}
+
+  
 
 }

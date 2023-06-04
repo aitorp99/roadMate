@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from 'src/app/services/users.service'; 
+import { Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-login',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private usersService: UsersService, private router: Router) { }
   email: any;
   password: any;
   error:string = "ERROR - DATOS INCORRECTOS"
@@ -16,6 +18,12 @@ export class LoginComponent implements OnInit {
   }
 
   LoginButton() {
-    
+    if (!this.usersService.checkCredentials(this.email, this.password)) {
+      this.errorMessage = true;
+    } else {
+      this.router.navigate(['/home']);
+      this.errorMessage = false;
+    }
   }
+  
 }

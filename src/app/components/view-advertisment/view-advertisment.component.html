@@ -29,7 +29,9 @@
                   </tbody>
                 </table>
               </div>
-              <button class="btn btn-primary btn-block" (click)="apuntarse()">Apuntarse al viaje</button>
+              <div *ngIf="isFromSearch" class="d-flex justify-content-center">
+                <button class="btn btn-primary" (click)="apuntarse()">Apuntarse al viaje</button>
+            </div>            
             </div>
           </div>
         </div>

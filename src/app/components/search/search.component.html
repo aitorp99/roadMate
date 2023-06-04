@@ -1,26 +1,52 @@
 <div class="main-container">
     <h1 class="title">RoadMate</h1>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6" *ngFor="let anuncio of ads">
-                <div class="card">
-                    <div class="card-inner">
-                        <div class="card-body">
-                            <h2 class="card-title">{{ anuncio.name }}</h2>
-                            <div class="info-blocks">
-                                <div class="info-block"><b><em>Fecha: </em></b>{{ anuncio.date }}</div>
-                                <div class="info-block"><b><em>Horario: </em></b>{{ anuncio.schedule }}</div>
-                                <div class="info-block"><b><em>Punto de recogida: </em></b>{{ anuncio.pickupAddress }}</div>
-                                <div class="info-block"><b><em>Fin de trayecto: </em></b>{{ anuncio.dropAddress }}</div>
-                                <div class="info-block"><b><em>Asientos libres: </em></b>{{ anuncio.freeSeat }}</div>
-                                <div class="info-block"><b><em>Teléfono: </em></b>{{ anuncio.phone }}</div>
-                                <div class="info-block"><b><em>Precio: </em></b>{{ anuncio.price }}€</div>
-                            </div>
-                            <button class="btn btn-primary" (click)="addAdvertismentBtn(anuncio)">Ver anuncio</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="content">
+      <div class="filter-section">
+        <h2>Filtrar anuncios</h2>
+        <div class="filter-row">
+          <label for="filterDate">Fecha:</label>
+          <input type="date" id="filterDate" [(ngModel)]="filterDate">
         </div>
+        <div class="filter-row">
+          <label for="filterSchedule">Horario:</label>
+          <input type="time" id="filterSchedule" [(ngModel)]="filterSchedule">
+        </div>
+        <button class="btn btn-primary" (click)="filterAds()">Aplicar filtros</button>
+      </div>
+      <div class="ads-section" style="margin-right: 100px;">
+        <div class="row g-3">
+          <div class="col-sm-4 " *ngFor="let anuncio of currentAds">
+            <div class="card">
+              <div class="card-inner">
+                <div class="card-body">
+                  <h2 class="card-title">{{ anuncio.name }}</h2>
+                  <div class="info-blocks">
+                    <div class="info-block"><b><em>Fecha: </em></b>{{ convertDate(anuncio.date) }}</div> 
+                    <div class="info-block"><b><em>Horario: </em></b>{{ anuncio.schedule }}</div>
+                    <div class="info-block"><b><em>Punto de recogida: </em></b>{{ anuncio.pickupAddress }}</div>
+                    <div class="info-block"><b><em>Fin de trayecto: </em></b>{{ anuncio.dropAddress }}</div>
+                    <div class="info-block"><b><em>Asientos libres: </em></b>{{ anuncio.freeSeat }}</div>
+                    <div class="info-block"><b><em>Teléfono: </em></b>{{ anuncio.phone }}</div>
+                    <div class="info-block"><b><em>Precio: </em></b>{{ anuncio.price }}€</div>
+                  </div>
+                  <button class="btn btn-primary" (click)="addAdvertismentBtn(anuncio)">Ver anuncio</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+    <div class="pagination-buttons" style="margin-bottom: 50px;">
+      <button [disabled]="currentPage === 1" (click)="currentPage = currentPage - 1">
+        <i class="fas fa-chevron-left" style="color: red;"></i>
+      </button>
+      {{currentPage}} de {{maxPage}}
+      <button [disabled]="currentPage === maxPage" (click)="currentPage = currentPage + 1">
+        <i class="fas fa-chevron-right" style="color: red;"></i>
+      </button>
+    </div>
+    
+      
+  </div>
+  
